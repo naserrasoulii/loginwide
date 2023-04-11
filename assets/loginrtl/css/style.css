@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "irsans";
+  src: url("../font/IRANSansWeb.woff2");
+}
+body {
+  overflow: hidden;
+  font-family: "irsans";
+}
+main {
+  width: 100vw;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  font-family: "irsans";
+  font-size: 13px;
+  color: #354f52;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #3a0ca3;
+}
+.fw-custom{
+  font-size: 0.8rem !important;
+}
+.forgot-pass i{
+color: #354f52 !important;
+}
+form input:focus::placeholder {
+  transform: translateX(-5px);
+}
+form input:focus {
+  box-shadow: none !important;
+}
+form input::placeholder {
+  font-size: 13px;
+  transition: all 0.5s;
+}
+form div .input-group .input-group-text {
+  color: #354f52;
+  font-size: 20px;
+}
+.label-custom {
+  font-size: 14px !important;
+}
+.left-section img {
+  width: 100%;
+  height: 100vh;
+}
+.left-section div {
+  position: relative;
+}
+.left-section div::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.left-section video {
+  width: 100%;
+  height: 100vh;
+}
+.left-section iframe {
+  width: 100%;
+  height: 100vh;
+}
+@media (max-width: 767px) {
+  .bg-custom {
+    background: url("../img/bg-svg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
