@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "iransans";
+  direction: rtl;
 }
 button {
   border: none;
@@ -23,7 +24,7 @@ input[type="number"] {
   -moz-appearance: textfield;
   /* Firefox */
 }
-body {
+.container {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -85,6 +86,7 @@ body {
             }
           }
           &::placeholder {
+            color: #4e4d4d9f;
           }
           &:focus {
             border-color: $purpleColor;
@@ -115,8 +117,9 @@ body {
       }
     }
   }
-
-  &.dark {
+}
+body.dark {
+  .container {
     &::after {
       background: $darkColor2;
       opacity: 1;
@@ -130,9 +133,15 @@ body {
           .labelCustom {
             color: #fff;
           }
-          .inputCustom{
+          .inputCustom {
             background: transparent;
             color: #fff;
+            &::placeholder {
+              color: #ebebeb48;
+            }
+            &:disabled {
+              background: $darkColor2;
+            }
           }
         }
       }

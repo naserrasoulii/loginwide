@@ -137,6 +137,7 @@ table {
   font-family: "iransans";
   src: url("../font/IRANSansWeb.woff2");
 }
+
 :root {
   --primaryColor: #5d87ff;
   --purpleColor: #fa896b;
@@ -155,6 +156,7 @@ table {
   padding: 0;
   box-sizing: border-box;
   font-family: "iransans";
+  direction: rtl;
 }
 
 button {
@@ -178,7 +180,7 @@ input[type=number] {
   /* Firefox */
 }
 
-body {
+.container {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -187,7 +189,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-body::after {
+
+.container::after {
   content: "";
   position: absolute;
   width: 100vw;
@@ -196,7 +199,8 @@ body::after {
   opacity: 0.5;
   z-index: -1;
 }
-body .formContainer {
+
+.container .formContainer {
   border: 1px solid #ebebeb;
   min-width: 350px;
   max-width: 350px;
@@ -206,28 +210,33 @@ body .formContainer {
   padding: 1rem;
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
 }
-body .formContainer .forms {
+
+.container .formContainer .forms {
   padding: 3rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-body .formContainer .forms .logo {
+
+.container .formContainer .forms .logo {
   margin-bottom: 2rem;
 }
-body .formContainer .forms .inputCustomGroup {
+
+.container .formContainer .forms .inputCustomGroup {
   width: 100%;
   margin-top: 1.3rem;
 }
-body .formContainer .forms .inputCustomGroup .labelCustom {
+
+.container .formContainer .forms .inputCustomGroup .labelCustom {
   display: block;
   margin-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
   color: var(--lightColor1);
 }
-body .formContainer .forms .inputCustomGroup .inputCustom {
+
+.container .formContainer .forms .inputCustomGroup .inputCustom {
   transition: all 0.3s;
   display: block;
   padding: 0 0.4rem;
@@ -237,20 +246,29 @@ body .formContainer .forms .inputCustomGroup .inputCustom {
   min-height: 40px;
   border-radius: 5px;
 }
-body .formContainer .forms .inputCustomGroup .inputCustom:disabled {
+
+.container .formContainer .forms .inputCustomGroup .inputCustom:disabled {
   background-color: #ebebeb;
 }
-body .formContainer .forms .inputCustomGroup .inputCustom:disabled::placeholder {
+
+.container .formContainer .forms .inputCustomGroup .inputCustom:disabled::placeholder {
   opacity: 0;
 }
-body .formContainer .forms .inputCustomGroup .inputCustom:focus {
+
+.container .formContainer .forms .inputCustomGroup .inputCustom::placeholder {
+  color: rgba(78, 77, 77, 0.6235294118);
+}
+
+.container .formContainer .forms .inputCustomGroup .inputCustom:focus {
   border-color: var(--purpleColor);
 }
-body .formContainer .forms .btnContainer {
+
+.container .formContainer .forms .btnContainer {
   margin-top: 1.3rem;
   width: 100%;
 }
-body .formContainer .forms .btnContainer .btnCustom {
+
+.container .formContainer .forms .btnContainer .btnCustom {
   border: none;
   outline: none;
   box-shadow: none;
@@ -261,28 +279,41 @@ body .formContainer .forms .btnContainer .btnCustom {
   color: #fff;
   border-radius: 5px;
 }
-body .formContainer .forms .register {
+
+.container .formContainer .forms .register {
   text-decoration: none;
   margin-top: 1.5rem;
   color: var(--primaryColor);
   font-size: 0.8rem;
   letter-spacing: 0px;
 }
-body.dark::after {
+
+body.dark .container::after {
   background: var(--darkColor2);
   opacity: 1;
 }
-body.dark .formContainer {
+
+body.dark .container .formContainer {
   background-color: var(--darkColor3);
   box-shadow: none;
   border: none;
 }
-body.dark .formContainer .forms .inputCustomGroup .labelCustom {
+
+body.dark .container .formContainer .forms .inputCustomGroup .labelCustom {
   color: #fff;
 }
-body.dark .formContainer .forms .inputCustomGroup .inputCustom {
+
+body.dark .container .formContainer .forms .inputCustomGroup .inputCustom {
   background: transparent;
   color: #fff;
+}
+
+body.dark .container .formContainer .forms .inputCustomGroup .inputCustom::placeholder {
+  color: rgba(235, 235, 235, 0.2823529412);
+}
+
+body.dark .container .formContainer .forms .inputCustomGroup .inputCustom:disabled {
+  background: var(--darkColor2);
 }
 
 @media (max-width: 399px) {
@@ -290,19 +321,23 @@ body.dark .formContainer .forms .inputCustomGroup .inputCustom {
     max-width: 300px;
     min-width: 300px;
   }
+
   body .formContainer .forms {
     padding: 1rem 1rem;
   }
 }
+
 @media (min-width: 400px) {
   body .formContainer {
     max-width: 350px;
     min-width: 350px;
   }
+
   body .formContainer .forms {
     padding: 1rem 1rem;
   }
 }
+
 @media (min-width: 1200px) {
   body .formContainer .form {
     padding: 3rem 2rem;
