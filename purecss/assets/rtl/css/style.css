@@ -137,7 +137,6 @@ table {
   font-family: "iransans";
   src: url("../font/IRANSansWeb.woff2");
 }
-
 :root {
   --primaryColor: #5d87ff;
   --purpleColor: #fa896b;
@@ -189,7 +188,6 @@ input[type=number] {
   align-items: center;
   justify-content: center;
 }
-
 .container::after {
   content: "";
   position: absolute;
@@ -199,7 +197,6 @@ input[type=number] {
   opacity: 0.5;
   z-index: -1;
 }
-
 .container .formContainer {
   border: 1px solid #ebebeb;
   min-width: 350px;
@@ -210,7 +207,6 @@ input[type=number] {
   padding: 1rem;
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
 }
-
 .container .formContainer .forms {
   padding: 3rem 2rem;
   display: flex;
@@ -218,16 +214,17 @@ input[type=number] {
   align-items: center;
   flex-direction: column;
 }
-
 .container .formContainer .forms .logo {
   margin-bottom: 2rem;
 }
-
+.container .formContainer .forms .logo .imageLogo {
+  max-width: 100%;
+  height: auto;
+}
 .container .formContainer .forms .inputCustomGroup {
   width: 100%;
   margin-top: 1.3rem;
 }
-
 .container .formContainer .forms .inputCustomGroup .labelCustom {
   display: block;
   margin-bottom: 0.5rem;
@@ -235,7 +232,6 @@ input[type=number] {
   font-weight: bold;
   color: var(--lightColor1);
 }
-
 .container .formContainer .forms .inputCustomGroup .inputCustom {
   transition: all 0.3s;
   display: block;
@@ -246,28 +242,22 @@ input[type=number] {
   min-height: 40px;
   border-radius: 5px;
 }
-
 .container .formContainer .forms .inputCustomGroup .inputCustom:disabled {
   background-color: #ebebeb;
 }
-
 .container .formContainer .forms .inputCustomGroup .inputCustom:disabled::placeholder {
   opacity: 0;
 }
-
 .container .formContainer .forms .inputCustomGroup .inputCustom::placeholder {
   color: rgba(78, 77, 77, 0.6235294118);
 }
-
 .container .formContainer .forms .inputCustomGroup .inputCustom:focus {
   border-color: var(--purpleColor);
 }
-
 .container .formContainer .forms .btnContainer {
   margin-top: 1.3rem;
   width: 100%;
 }
-
 .container .formContainer .forms .btnContainer .btnCustom {
   border: none;
   outline: none;
@@ -279,7 +269,6 @@ input[type=number] {
   color: #fff;
   border-radius: 5px;
 }
-
 .container .formContainer .forms .register {
   text-decoration: none;
   margin-top: 1.5rem;
@@ -292,26 +281,21 @@ body.dark .container::after {
   background: var(--darkColor2);
   opacity: 1;
 }
-
 body.dark .container .formContainer {
   background-color: var(--darkColor3);
   box-shadow: none;
   border: none;
 }
-
 body.dark .container .formContainer .forms .inputCustomGroup .labelCustom {
   color: #fff;
 }
-
 body.dark .container .formContainer .forms .inputCustomGroup .inputCustom {
   background: transparent;
   color: #fff;
 }
-
 body.dark .container .formContainer .forms .inputCustomGroup .inputCustom::placeholder {
   color: rgba(235, 235, 235, 0.2823529412);
 }
-
 body.dark .container .formContainer .forms .inputCustomGroup .inputCustom:disabled {
   background: var(--darkColor2);
 }
@@ -321,23 +305,19 @@ body.dark .container .formContainer .forms .inputCustomGroup .inputCustom:disabl
     max-width: 300px;
     min-width: 300px;
   }
-
   body .formContainer .forms {
     padding: 1rem 1rem;
   }
 }
-
 @media (min-width: 400px) {
   body .formContainer {
     max-width: 350px;
     min-width: 350px;
   }
-
   body .formContainer .forms {
     padding: 1rem 1rem;
   }
 }
-
 @media (min-width: 1200px) {
   body .formContainer .form {
     padding: 3rem 2rem;
