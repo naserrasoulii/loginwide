@@ -1,0 +1,22 @@
+:root {
+  --primaryColor: #5d87ff;
+  --purpleColor: #fa896b;
+  --lightColor: #e5eaef;
+  --lightColor1: #333f55;
+  --lightColor2: #ffffff33;
+  --darkColor: #212529;
+  --successColor: #81c784;
+  --darkColor2: #59657d;
+  --darkColor3: #2a3447;
+  --darkblue1: #1e6091;
+}
+$primaryColor: var(--primaryColor);
+$purpleColor: var(--purpleColor);
+$lightColor: var(--lightColor);
+$lightColor1: var(--lightColor1);
+$lightColor2: var(--lightColor2);
+$darkColor: var(--darkColor);
+$successColor: var(--successColor);
+$darkColor2: var(--darkColor2);
+$darkColor3: var(--darkColor3);
+$darkblue1: var(--darkblue1);
