@@ -1,0 +1,31 @@
+@media (max-width: 399px) {
+  body {
+    .formContainer {
+      max-width: 300px;
+      min-width: 300px;
+      .forms {
+        padding: 1rem 1rem;
+      }
+    }
+  }
+}
+@media (min-width: 400px) {
+  body {
+    .formContainer {
+      max-width: 350px;
+      min-width: 350px;
+      .forms {
+        padding: 1rem 1rem;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    .formContainer {
+      .form {
+        padding: 3rem 2rem;
+      }
+    }
+  }
+}

@@ -140,7 +140,7 @@ table {
 :root {
   --primaryColor: #5d87ff;
   --purpleColor: #fa896b;
-  --lightColor: #e5eaef;
+  --lightColor: #EFF3FD;
   --lightColor1: #333f55;
   --lightColor2: #ffffff33;
   --darkColor: #212529;
@@ -150,19 +150,56 @@ table {
   --darkblue1: #1e6091;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "iransans";
+}
+
+button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
 body {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  background: var(--primaryColor);
   font-family: "iransans";
   display: flex;
   align-items: center;
   justify-content: center;
 }
+body::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(#d2f1df, #d3d7fa, #bad8f4) 0 0/400% 400%;
+  opacity: 0.5;
+  z-index: -1;
+}
 body .formContainer {
-  min-width: 400px;
-  max-width: 400px;
-  min-height: 600px;
+  border: 1px solid #ebebeb;
+  min-width: 350px;
+  max-width: 350px;
   background-color: #fff;
   color: var(--lightColor1);
   border-radius: 5px;
@@ -170,7 +207,106 @@ body .formContainer {
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
 }
 body .formContainer .forms {
+  padding: 3rem 2rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .formContainer .forms .logo {
+  margin-bottom: 2rem;
+}
+body .formContainer .forms .inputCustomGroup {
+  width: 100%;
+  margin-top: 1.3rem;
+}
+body .formContainer .forms .inputCustomGroup .labelCustom {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--lightColor1);
+}
+body .formContainer .forms .inputCustomGroup .inputCustom {
+  transition: all 0.3s;
+  display: block;
+  padding: 0 0.4rem;
+  width: 100%;
+  border: 1px solid #d8d7d7;
+  outline: none;
+  min-height: 40px;
+  border-radius: 5px;
+}
+body .formContainer .forms .inputCustomGroup .inputCustom:disabled {
+  background-color: #ebebeb;
+}
+body .formContainer .forms .inputCustomGroup .inputCustom:disabled::placeholder {
+  opacity: 0;
+}
+body .formContainer .forms .inputCustomGroup .inputCustom:focus {
+  border-color: var(--purpleColor);
+}
+body .formContainer .forms .btnContainer {
+  margin-top: 1.3rem;
+  width: 100%;
+}
+body .formContainer .forms .btnContainer .btnCustom {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: var(--primaryColor);
+  width: 100%;
+  min-height: 40px;
+  padding: 0 0.4rem;
+  color: #fff;
+  border-radius: 5px;
+}
+body .formContainer .forms .register {
+  text-decoration: none;
+  margin-top: 1.5rem;
+  color: var(--primaryColor);
+  font-size: 0.8rem;
+  letter-spacing: 0px;
+}
+body.dark::after {
+  background: var(--darkColor2);
+  opacity: 1;
+}
+body.dark .formContainer {
+  background-color: var(--darkColor3);
+  box-shadow: none;
+  border: none;
+}
+body.dark .formContainer .forms .inputCustomGroup .labelCustom {
+  color: #fff;
+}
+body.dark .formContainer .forms .inputCustomGroup .inputCustom {
+  background: transparent;
+  color: #fff;
+}
+
+@media (max-width: 399px) {
+  body .formContainer {
+    max-width: 300px;
+    min-width: 300px;
+  }
+  body .formContainer .forms {
+    padding: 1rem 1rem;
+  }
+}
+@media (min-width: 400px) {
+  body .formContainer {
+    max-width: 350px;
+    min-width: 350px;
+  }
+  body .formContainer .forms {
+    padding: 1rem 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  body .formContainer .form {
+    padding: 3rem 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

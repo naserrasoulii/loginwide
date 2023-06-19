@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "iransans";
+}
+button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: "iransans";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(#d2f1df, #d3d7fa, #bad8f4) 0 0/400% 400%;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  .formContainer {
+    border: 1px solid #ebebeb;
+    min-width: 350px;
+    max-width: 350px;
+    // min-height: 600px;
+    background-color: #fff;
+    color: $lightColor1;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 0 40px rgba($color: #fff, $alpha: 0.5);
+    .forms {
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .logo {
+        margin-bottom: 2rem;
+      }
+      .inputCustomGroup {
+        width: 100%;
+        margin-top: 1.3rem;
+        .labelCustom {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+          font-weight: bold;
+          color: $lightColor1;
+        }
+        .inputCustom {
+          transition: all 0.3s;
+          display: block;
+          padding: 0 0.4rem;
+          width: 100%;
+          border: 1px solid #d8d7d7;
+          outline: none;
+          min-height: 40px;
+          border-radius: 5px;
+          &:disabled {
+            background-color: #ebebeb;
+            &::placeholder {
+              opacity: 0;
+            }
+          }
+          &::placeholder {
+          }
+          &:focus {
+            border-color: $purpleColor;
+          }
+        }
+      }
+      .btnContainer {
+        margin-top: 1.3rem;
+        width: 100%;
+        .btnCustom {
+          border: none;
+          outline: none;
+          box-shadow: none;
+          background-color: $primaryColor;
+          width: 100%;
+          min-height: 40px;
+          padding: 0 0.4rem;
+          color: #fff;
+          border-radius: 5px;
+        }
+      }
+      .register {
+        text-decoration: none;
+        margin-top: 1.5rem;
+        color: $primaryColor;
+        font-size: 0.8rem;
+        letter-spacing: 0px;
+      }
+    }
+  }
+
+  &.dark {
+    &::after {
+      background: $darkColor2;
+      opacity: 1;
+    }
+    .formContainer {
+      background-color: $darkColor3;
+      box-shadow: none;
+      border: none;
+      .forms {
+        .inputCustomGroup {
+          .labelCustom {
+            color: #fff;
+          }
+          .inputCustom{
+            background: transparent;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
